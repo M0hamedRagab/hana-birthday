@@ -164,7 +164,7 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
     </svg>
     <h1 class="script">Something special is waiting for you... 🎁</h1>
     <h2>Hana's Birthday</h2>
-    <p class="wdate">October 5, 2026</p>
+    <p class="wdate">October 4, 2026</p>
     <div class="cd" id="cd" role="timer">
       <div><b id="cd-d">00</b><small>Days</small></div><i>:</i>
       <div><b id="cd-h">00</b><small>Hours</small></div><i>:</i>
@@ -313,7 +313,7 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
     eo.observe(wrap);
   } else { wrap.classList.add('open'); }
   document.getElementById('gift-link').addEventListener('click', confetti);
-  // ---- countdown: unlocks at Oct 5, 2026 00:00 Cairo time (independent of the visitor's timezone)
+  // ---- countdown: unlocks at Oct 4, 2026 00:00 Cairo time (independent of the visitor's timezone)
   function cairoOffset(ms){
     var o={}, sec=Math.floor(ms/1000)*1000;
     new Intl.DateTimeFormat('en-US',{timeZone:'Africa/Cairo',hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric'})
@@ -321,8 +321,8 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
     return Date.UTC(+o.year,o.month-1,+o.day,+o.hour,+o.minute,+o.second) - sec;
   }
   var TARGET;
-  try{ var g = Date.UTC(2026,9,5,0,0,0); TARGET = g - cairoOffset(g - cairoOffset(g)); }
-  catch(err){ TARGET = Date.UTC(2026,9,4,21,0,0); } // fallback: Cairo is UTC+3 (summer time) on that date
+  try{ var g = Date.UTC(2026,9,4,0,0,0); TARGET = g - cairoOffset(g - cairoOffset(g)); }
+  catch(err){ TARGET = Date.UTC(2026,9,3,21,0,0); } // fallback: Cairo is UTC+3 (summer time) on that date
   var waitEl = document.getElementById('wait'), site = document.getElementById('site'), timer = null;
   function pad(n){ return (n<10?'0':'')+n; }
   function show(){ site.hidden = false; window.scrollTo(0,0); }
