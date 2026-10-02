@@ -80,7 +80,7 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
 @keyframes glowpulse{0%,100%{box-shadow:0 12px 30px -10px rgba(246,220,156,.55)}50%{box-shadow:0 12px 38px -4px rgba(246,220,156,.8),0 0 0 7px rgba(246,220,156,.22)}}
 .gn1{font-size:1.2rem;font-weight:500;margin:0 0 .5rem;color:#fff7ee}
 .gn2{font-size:1.1rem;font-weight:500;margin:0;color:#f6dc9c}
-.sp{position:absolute;color:#f3b3bb;opacity:.7;animation:floaty 4s ease-in-out infinite}
+.sp{position:absolute;color:#d9b36e;opacity:.7;animation:floaty 4s ease-in-out infinite}
 .closing{padding-top:clamp(3.5rem,10vw,6rem);padding-bottom:clamp(4rem,12vw,7rem)}
 .closing h2{font-size:clamp(1.9rem,7vw,2.9rem);margin-bottom:.9rem}
 .closing p{font-size:1.2rem;color:var(--ink);margin:0 0 1.4rem}
@@ -145,10 +145,10 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
 
 <section class="wait" id="wait" aria-label="Birthday countdown">
   <div class="glow"></div>
-  <span class="sp" style="left:9%;top:12%;font-size:18px" aria-hidden="true">❤</span>
+  <span class="sp" style="left:9%;top:12%;font-size:18px" aria-hidden="true">✦</span>
   <span class="sp" style="right:10%;top:20%;font-size:13px;animation-delay:1s" aria-hidden="true">✦</span>
   <span class="sp" style="left:12%;bottom:16%;font-size:13px;animation-delay:2s" aria-hidden="true">✦</span>
-  <span class="sp" style="right:11%;bottom:14%;font-size:19px;animation-delay:.6s" aria-hidden="true">❤</span>
+  <span class="sp" style="right:11%;bottom:14%;font-size:19px;animation-delay:.6s" aria-hidden="true">✦</span>
   <div class="wrap">
     <svg class="wbox" viewBox="0 0 200 200" aria-hidden="true">
       <ellipse cx="100" cy="188" rx="64" ry="7" fill="#000" opacity=".15"/>
@@ -211,10 +211,10 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
 </section>
 
 <section class="gift-sec" id="gift">
-  <span class="sp" style="left:9%;top:14%;font-size:18px" aria-hidden="true">❤</span>
-  <span class="sp" style="right:10%;top:24%;font-size:14px;animation-delay:1s" aria-hidden="true">❤</span>
+  <span class="sp" style="left:9%;top:14%;font-size:18px" aria-hidden="true">✦</span>
+  <span class="sp" style="right:10%;top:24%;font-size:14px;animation-delay:1s" aria-hidden="true">✦</span>
   <span class="sp" style="left:14%;bottom:18%;font-size:12px;animation-delay:2s" aria-hidden="true">✦</span>
-  <span class="sp" style="right:12%;bottom:22%;font-size:20px;animation-delay:.5s" aria-hidden="true">❤</span>
+  <span class="sp" style="right:12%;bottom:22%;font-size:20px;animation-delay:.5s" aria-hidden="true">✦</span>
   <div class="wrap rv" id="finale-wrap" style="position:relative;z-index:1">
     <h2>🎁 YOUR GIFT IS WAITING!</h2>
     <p class="lead">I got you a little something special ❤️</p>
@@ -269,7 +269,9 @@ section{position:relative;padding:clamp(4rem,12vw,8rem) 1.4rem;text-align:center
   // gentle floating hearts
   function heart(){
     var h = document.createElement('span');
-    h.className = 'heart'; h.textContent = '❤';
+    var sym = ['✦','✦','✧','✦','•','✧','❤'][Math.floor(Math.random()*7)];
+    h.className = 'heart'; h.textContent = sym;
+    h.style.color = sym === '❤' ? '#c8434f' : '#c9a15b';
     h.style.left = Math.random()*100 + 'vw';
     h.style.fontSize = (10 + Math.random()*10) + 'px';
     h.style.setProperty('--dx', (Math.random()*60-30) + 'px');
